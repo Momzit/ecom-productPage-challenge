@@ -1,0 +1,18 @@
+.cart__product {
+    display: flex;
+    gap: 1rem;
+}
+
+.item__image > img {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    margin-left: -0.6rem;
+}
+
+.item__description {
+    color: var(--Dark-grayish-blue);
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0.5rem;
+}

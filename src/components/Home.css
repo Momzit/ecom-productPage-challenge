@@ -1,0 +1,145 @@
+.home__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    gap: 7rem;
+    margin-top: 0.5rem;
+    margin-left: 7rem;
+    width: 1440px;
+}
+
+.home__container > div > hr {
+    width: 1000px;
+    margin-left: 11.5rem;
+    color: var(--Pale-orange);
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+}
+
+.home__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 2rem;
+    margin-top: -1.5rem;
+}
+
+.main__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.thumbnail {
+    width: 450px;
+    height: 450px;
+    border-radius: 1rem;
+    object-fit: contain;
+}
+
+.scroll__image {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 1rem;
+    margin: 1.6rem 0.9rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.scroll__image:hover {
+    border: 2px solid var(--Orange);
+    opacity: 0.7;
+}
+
+.home__right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 6rem;
+    margin-right: 2rem;
+}
+
+.home__right > h3 {
+    color: var(--Orange);
+    font-size: 16px;
+    margin-bottom: 1rem;
+}
+
+.header__title {
+    font-size: 20px;
+    line-height: 2.5rem;
+    font-weight: bolder;
+    margin-bottom: 2.5rem;
+}
+
+.paragraph {
+    color: var(--Dark-grayish-blue);
+    font-size: 16px;
+    margin-bottom: 1.5rem;
+}
+
+.discount {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.discount > h2 {
+    color: var(--Orange);
+    font-size: 18px;
+    margin-top: 0.2rem;
+}
+
+.price > h3 {
+    color: var(--Dark-grayish-blue);
+    opacity: 0.5;
+    margin-bottom: 1rem;
+}
+
+.cart__button {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.svg__icon {
+    width: 20px;
+    height: 20px;
+    fill: white;
+}
+
+.add__to__cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    margin-right: 1rem;
+    background: var(--Orange);
+    color: white;
+    width: 17rem;
+    height: 3.5rem;
+    border-radius: 0.9rem;
+    cursor: pointer;
+}
+
+.plus__minus {
+    font-size: 12px;
+    font-weight: 800;
+    margin-right: 1rem;
+    background: var(--Orange);
+    color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
