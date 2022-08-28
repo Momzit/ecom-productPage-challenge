@@ -19,6 +19,7 @@ function Product({ item }) {
             {
                 item.thumsrc.map((thumb, pos) => (
                     <img 
+                        key={pos}
                         onClick={() => setIndex(pos)}
                         style={index === pos ? {opacity: 0.5, border: '2px solid hsl(26, 100%, 55%)'} : null} 
                         className='scroll__image' 

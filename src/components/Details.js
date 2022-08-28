@@ -3,27 +3,30 @@ import { useStateValue } from '../contextReducer/StateProvider';
 
 function Details({ product }) {
 
-    const [{basket}, dispatch] = useStateValue();
-    const [count, setCount] = useState(0);
+    const [, dispatch] = useStateValue();
+    const [increament, setIncreament] = useState(0);
 
-    const addToCart = (item) => {
-        const exist = basket.find(x => x.id === product.id);
-        if (exist) {
-
-        } else {
+    const addToCart = () => {
+        if (increament > 0) {
             dispatch({
                 type: 'ADD_TO_BASKET',
-                item: {
-                    id: item.id,
-                    title: item.title,
-                    image: item.image,
-                    price: item.price,
-                    count: 1,
-                },
+                id: product.id,
+                item: product,
+                qnty: increament,
             })
         }
+        setIncreament(0)
     }
     
+    const quantityDecrease = () => {
+        if (increament > 0) {
+            setIncreament((prevState) => prevState - 1)
+        }
+    }
+
+    const quantityIncrease = (id) => {
+        setIncreament((prevState) => prevState + 1)
+    }
   return (
     <div className='home__right'>
         <h3>SNEAKER COMPANY</h3>
@@ -41,7 +44,7 @@ function Details({ product }) {
 
         <div className='price'>
             <div className='discount'>
-                <h1>${price}</h1>
+                <h1>${product.price}</h1>
                 <h2>50%</h2>
             </div>
             <h3>$125.00</h3>
@@ -49,7 +52,7 @@ function Details({ product }) {
 
         <div className='cart__button'>
             <button onClick={quantityDecrease} className='plus__minus'><h1>-</h1></button>
-            <h3>{basket?.length}</h3>
+            <h3>{increament}</h3>
             <button onClick={quantityIncrease} className='plus__minus'><h2>+</h2></button>
             <button onClick={addToCart} className='add__to__cart'>
                 <svg className='svg__icon'>

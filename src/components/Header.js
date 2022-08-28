@@ -5,11 +5,22 @@ import cartSvg from '../images/icon-cart.svg'
 import profile from '../images/image-avatar.png'
 import Cart from './Cart'
 import { useStateValue } from '../contextReducer/StateProvider'
+import { data } from '../data/Images'
 
 function Header() {
   const [toggle, setToggle] = useState(false);
 
   const [{ basket },] = useStateValue();
+
+  const totalCount = () => {
+    let tot = 0;
+    for (const product of basket) {
+      tot += product.count;
+    }
+    return tot
+  }
+
+  const { products } = data;
 
   const showCart = () => {
     setToggle(!toggle)
@@ -51,14 +62,18 @@ function Header() {
         <div className='header__right'>
           <div className='cart__info' onClick={showCart}>
             <img className='cart__logo' src={ cartSvg } alt='cart logo' />
-            <div className='number__count'>{ basket?.length}</div>
+            <div className='number__count'>{ basket?.length === 0 ? 0 : totalCount()}</div>
           </div>
 
-          <img onClick={showCart} className='profile__logo' src={ profile } alt='profile logo' />
+          <img className='profile__logo' src={ profile } alt='profile logo' />
         </div>
 
         <div className={toggle ? 'show__cart' : 'hide__cart'}>
-          <Cart />
+          {
+            products.map((item, index) =>(
+              <Cart item={item} key={index}/>
+            ))
+          }
         </div>
     </div>
   )

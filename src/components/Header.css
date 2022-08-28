@@ -83,6 +83,11 @@
     cursor: pointer;
 }
 
+.profile__logo:hover {
+    border: 1px solid var(--Orange);
+    border-radius: 50%;
+}
+
 .hide__cart {
     display: none;
 }

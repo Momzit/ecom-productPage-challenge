@@ -14,13 +14,13 @@ function Home() {
             <hr></hr>
         </div>
         {
-            products.map((item) => (
-            <div className='home'>
+            products.map((item, index) => (
+            <div className='home' key={item.id+2}>
 
                 <Product item={item} key={item.id}/>
 
                 <Details
-                    key={item.id} 
+                    key={index} 
                     product={item}
                 />
             </div>

@@ -3,14 +3,16 @@ import './Cart.css'
 import { useStateValue } from '../contextReducer/StateProvider';
 import CartProduct from './CartProduct';
 
-function Cart() {
+function Cart({ item }) {
 
     const [{ basket }, dispatch] = useStateValue();
 
     const removeItem = () => {
         dispatch({
             type: 'REMOVE_FROM_BASKET',
-            id: 1,
+            id: item.id,
+            qnty: item.count,
+            item: item,
         })
     }
 
@@ -35,12 +37,12 @@ function Cart() {
                 <div className='filled__cart__body'>
                     <div className='row1'>
                         {
-                            basket?.map(item => (
+                            basket?.map((item, index) => (
                                 <CartProduct 
-                                    key={item.id}
+                                    key={index}
                                     id={item.id}
                                     title={item.title}
-                                    image={item.image}
+                                    image={item.thumsrc}
                                     price={item.price}
                                     count={item.count}
                                 />

@@ -1,11 +1,11 @@
 import React from 'react'
 import './CartProduct.css'
 
-function CartProduct({ image, id, price, title, count }) {
+function CartProduct({ title, image, price, count }) {
   return (
     <div className='cart__product'>
         <div className='item__image'>
-            <img src= {image} alt='item avatar' />
+            <img src= {image[0]} alt='Avatar' />
         </div>
 
         <div className='item__description'>
