@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Lightbox from './Lightbox';
 import './Product.css'
 
 function Product({ item }) {
@@ -7,13 +8,17 @@ function Product({ item }) {
 
   return (
     <div className='home__left'>
+        
         <div className='main__image'>
-            <img 
-                className='thumbnail' 
-                src={ item.src[index] }
-                alt='thumbnail' 
-            />
+            <Lightbox item={item} ind={index}>
+                <img 
+                    className='thumbnail' 
+                    src={ item.src[index] }
+                    alt='thumbnail' 
+                />
+            </Lightbox>
         </div>
+        
 
         <div className='small__images'>
             {
@@ -21,7 +26,7 @@ function Product({ item }) {
                     <img 
                         key={pos}
                         onClick={() => setIndex(pos)}
-                        style={index === pos ? {opacity: 0.5, border: '2px solid hsl(26, 100%, 55%)'} : null} 
+                        style={index === pos ? {opacity: 0.5, border: '2px solid hsl(26, 100%, 55%)', zIndex: 200} : null} 
                         className='scroll__image' 
                         src={ thumb }  
                         alt='scroll image1' />
